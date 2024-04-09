@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/textStyles.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ super.key });
@@ -27,7 +28,7 @@ class ChooseMenu extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
-      padding: const EdgeInsets.fromLTRB(25, 0, 25, 0), // 좌우 패딩 적용
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0), // 좌우 패딩 적용
       child: Column(
         children: [
           Image.asset(  // 동국대 로고
@@ -41,16 +42,22 @@ class ChooseMenu extends StatelessWidget {
                 alignment: Alignment.centerLeft, 
                 'assets/images/robot_main_logo.png', 
                 fit: BoxFit.contain, 
-                height: 80
+                height: 90
               ),
-              const Spacer(),
-              Text(
-                '안녕하세요, 동국대학교 도서관 서비스 로봇\n“라이브러리봇”입니다 :)',
-                style: TextStyle(
-                  fontSize: 15, 
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold
-                ),
+              const SizedBox(width: 5),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '안녕하세요, 동국대학교 도서관 서비스 로봇\n“라이브러리봇”입니다 :)',
+                    style: headerTextStyle,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    '아래에서 원하는 서비스를 선택해보세요!',
+                    style: defaultTextStyle,
+                  ),
+                ],
               ),
             ],
           ),
