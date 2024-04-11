@@ -14,3 +14,9 @@ const TextStyle defaultTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+const TextStyle buttonTextStyle = TextStyle(
+  fontFamily: 'NotoSans',
+  color: CupertinoColors.black,
+  fontWeight: FontWeight.w700,
+  fontSize: 18,
+);

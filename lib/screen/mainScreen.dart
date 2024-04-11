@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/textStyles.dart';
+import '../widget/mainButton.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ super.key });
@@ -11,7 +12,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: ChooseMenu()
@@ -59,6 +60,14 @@ class ChooseMenu extends StatelessWidget {
                   ),
                 ],
               ),
+            ],
+          ),
+          // 버튼 3개
+          Column(
+            children: [
+              const MainButton(),
+              const MainButton(),
+              const MainButton()
             ],
           ),
         ],
