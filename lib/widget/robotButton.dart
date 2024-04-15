@@ -14,7 +14,7 @@ class _RobotButtonState extends State<RobotButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 330,
       height: 150,
       decoration: BoxDecoration(
         color: Color(0xFFD0F5BE),
@@ -25,7 +25,7 @@ class _RobotButtonState extends State<RobotButton> {
         child: Stack(
           children: [
             Container(  // 버튼 이름
-              padding: const EdgeInsets.fromLTRB(72, 20, 73, 0),
+              padding: const EdgeInsets.fromLTRB(60, 20, 60, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -51,7 +51,7 @@ class _RobotButtonState extends State<RobotButton> {
             Container(  // 로봇 로고
               width: 45,
               height: 45,
-              margin: const EdgeInsets.fromLTRB(140, 10, 140, 0),
+              margin: const EdgeInsets.fromLTRB(130, 10, 130, 0),
               child: Image.asset(  
                 alignment: Alignment.center, 
                 'assets/images/icon1.png', 

@@ -14,7 +14,7 @@ class _DrinkButtonState extends State<DrinkButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 330,
       height: 150,
       decoration: BoxDecoration(
         color: Color(0xFFC0E6F2),
@@ -25,7 +25,7 @@ class _DrinkButtonState extends State<DrinkButton> {
         child: Stack(
           children: [
             Container(  // 버튼 이름
-              padding: const EdgeInsets.fromLTRB(60, 15, 60, 0),
+              padding: const EdgeInsets.fromLTRB(50, 10, 50, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -40,10 +40,10 @@ class _DrinkButtonState extends State<DrinkButton> {
                 ],
               ),
             ),
-            Container(  // 로봇 로고
+            Container(  // 음료 로고
               width: 45,
               height: 45,
-              margin: const EdgeInsets.fromLTRB(140, 10, 140, 0),
+              margin: const EdgeInsets.fromLTRB(130, 10, 130, 0),
               child: Image.asset(  
                 alignment: Alignment.center, 
                 'assets/images/icon2.png', 

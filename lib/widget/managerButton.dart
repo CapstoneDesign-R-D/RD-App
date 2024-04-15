@@ -14,7 +14,7 @@ class _ManagerButtonState extends State<ManagerButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: 330,
       height: 150,
       decoration: BoxDecoration(
         color: Color(0xFFE1B6F0),
@@ -25,7 +25,7 @@ class _ManagerButtonState extends State<ManagerButton> {
         child: Stack(
           children: [
             Container(  // 버튼 이름
-              padding: const EdgeInsets.fromLTRB(60, 15, 60, 0),
+              padding: const EdgeInsets.fromLTRB(60, 10, 60, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -40,10 +40,10 @@ class _ManagerButtonState extends State<ManagerButton> {
                 ],
               ),
             ),
-            Container(  // 로봇 로고
+            Container(  // 관리자페이지 로고
               width: 45,
               height: 45,
-              margin: const EdgeInsets.fromLTRB(140, 10, 140, 0),
+              margin: const EdgeInsets.fromLTRB(130, 10, 130, 0),
               child: Image.asset(  
                 alignment: Alignment.center, 
                 'assets/images/icon3.png', 
