@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../components/textStyles.dart';
 import '../widget/robotButton.dart';
 import '../widget/drinkButton.dart';
+import '../widget/managerButton.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ super.key });
@@ -45,8 +46,8 @@ class ChooseMenu extends StatelessWidget {
                 fit: BoxFit.contain, 
                 height: 90
               ),
-              const SizedBox(width: 5),
-              Column(
+              const SizedBox(width: 5), // 여백
+              Column( // 앱 기본 멘트
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -62,16 +63,16 @@ class ChooseMenu extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 20,
+          SizedBox( // 여백
+            height: 30,
           ),
-          // 버튼 3개
-          Column(
+          Column( // 버튼 3개
             children: [
               const RobotButton(),
-              const SizedBox(height: 20), // 여백
+              const SizedBox(height: 25), // 여백
               const DrinkButton(),
-              const SizedBox(height: 20), // 여백
+              const SizedBox(height: 25), // 여백
+              const ManagerButton()
             ],
           ),
         ],
