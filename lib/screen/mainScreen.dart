@@ -26,7 +26,6 @@ class ChooseMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
       padding: const EdgeInsets.fromLTRB(20, 0, 20, 0), // 좌우 패딩 적용

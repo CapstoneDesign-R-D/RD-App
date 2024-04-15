@@ -1,6 +1,6 @@
 /* 메인 화면 내 버튼 3가지 */
-import 'dart:ui';
-import 'package:/flutter/cupertino.dart';
+import 'dart:io';
+import 'package:flutter/material.dart';
 import '../components/textStyles.dart';
 
 class MainButton extends StatefulWidget {
@@ -13,11 +13,10 @@ class MainButton extends StatefulWidget {
 class _MainButtonState extends State<MainButton> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return SizedBox(
       width: 320,
       height: 150,
-      child: CupertinoButton(
+      child: MaterialButton(
         onPressed: () {},
         child: Stack(
           children: [
@@ -42,11 +41,12 @@ class _MainButtonState extends State<MainButton> {
             const SizedBox(width: 26),
             Container(
               margin: const EdgeInsets.fromLTRB(140, 11, 140, 0),
-              child: const Icon(
-                CupertinoIcons.photo_on_rectangle,
-                size: 28,
-                color: Color(0xFF9A9526),
-              )
+              child: Image.asset(  // 로봇 로고
+                alignment: Alignment.centerLeft, 
+                'assets/images/icon1.png', 
+                fit: BoxFit.contain, 
+                height: 90
+              ),
             ),
             Container(
               padding: const EdgeInsets.fromLTRB(72, 63, 73, 0),
