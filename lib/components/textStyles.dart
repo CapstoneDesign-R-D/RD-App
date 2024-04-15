@@ -13,6 +13,12 @@ const TextStyle defaultTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+const TextStyle greyTextStyle = TextStyle(
+  fontFamily: 'Inter',
+  color: Colors.blueGrey,
+  fontWeight: FontWeight.w500,
+);
+
 const TextStyle buttonTextStyle = TextStyle(
   fontFamily: 'NotoSans',
   color: Colors.black,
