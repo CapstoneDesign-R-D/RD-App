@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/textStyles.dart';
-import '../widget/mainButton.dart';
+import '../widget/robotButton.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ super.key });
@@ -61,12 +61,13 @@ class ChooseMenu extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: 20,
+          ),
           // 버튼 3개
           Column(
             children: [
               const MainButton(),
-              const MainButton(),
-              const MainButton()
             ],
           ),
         ],
