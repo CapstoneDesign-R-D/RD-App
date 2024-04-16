@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screen/chooseFloorScreen.dart';
 import 'package:flutter_app/screen/mainScreen.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,  // 기본 배경색 지정
       ),
-      home: const MainScreen(),
+      home: const ChooseFloorScreen(),
     );
   }
 }
