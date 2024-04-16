@@ -17,7 +17,9 @@ class _BarState extends State<Bar> {
         MaterialButton( // 뒤로 가기 버튼
           padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
           minWidth: 25,
-          onPressed: () {}, // 버튼 클릭 시 해당 페이지로 이동
+          onPressed: () { // 버튼 클릭 시 뒤로 이동
+            Navigator.pop(context);
+          }, 
           child: Icon(
             Icons.arrow_back,
             color: Color(0xFFE85610),

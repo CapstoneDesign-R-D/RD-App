@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,  // 기본 배경색 지정
       ),
-      home: const ChooseFloorScreen(),
+      home: const MainScreen(),
     );
   }
 }
