@@ -28,7 +28,7 @@ class _ChooseFloorScreenState extends State<ChooseFloorScreen> {
                 fit: BoxFit.contain, 
                 height: 90
               ),
-              const SizedBox(height: 15), // 여백
+              const SizedBox(height: 18), // 여백
               Container(  // 멘트
                 height: 20,
                 child: Align(
@@ -43,24 +43,42 @@ class _ChooseFloorScreenState extends State<ChooseFloorScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  FloorButton(),
-                  FloorButton(),
+                  FloorButton(
+                    buttonText: 'B2F', 
+                    buttonColor: Color(0xFFFFECA9)
+                  ),
+                  FloorButton(
+                    buttonText: 'B1F', 
+                    buttonColor: Color(0xFFFFCC201)
+                  ),
                 ],
               ),
               const SizedBox(height: 25), // 여백
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  FloorButton(),
-                  FloorButton(),
+                  FloorButton(
+                    buttonText: '1F', 
+                    buttonColor: Color(0xFFFFE073)
+                  ),
+                  FloorButton(
+                    buttonText: '2F', 
+                    buttonColor: Color(0xFFFFD951)
+                  ),
                 ],
               ),
               const SizedBox(height: 25), // 여백
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  FloorButton(),
-                  FloorButton(),
+                  FloorButton(
+                    buttonText: '3F', 
+                    buttonColor: Color(0xFFE95614)
+                  ),
+                  FloorButton(
+                    buttonText: '4F', 
+                    buttonColor: Color(0xFFF49305)
+                  ),
                 ],
               )
             ],

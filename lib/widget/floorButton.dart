@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/components/textStyles.dart';
 
 class FloorButton extends StatelessWidget {
-  const FloorButton({ super.key });
+  final String buttonText;  // 버튼 내 텍스트 
+  final Color buttonColor;  // 버튼 색깔
+
+  const FloorButton({ super.key, required this.buttonColor, required this.buttonText });
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,7 @@ class FloorButton extends StatelessWidget {
       width: 130,
       height: 130,
       decoration: BoxDecoration(
-        color: Color(0xFFFFECA9),
+        color: buttonColor, // 매개변수로 입력 받은 색상 값이 버튼의 색상 값으로 입력됨.
         borderRadius: BorderRadius.circular(100),
         boxShadow: [
           BoxShadow(
@@ -26,7 +29,7 @@ class FloorButton extends StatelessWidget {
         child: Stack(
           children: [
             Text(
-              'B2F',
+              buttonText, // 매개변수로 입력 받은 문자열이 버튼 내 텍스트로 입력됨.
               style: buttonTextStyle,
               textAlign: TextAlign.center,
             ),
