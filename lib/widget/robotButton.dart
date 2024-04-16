@@ -4,14 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/chooseFloorScreen.dart';
 import '../components/textStyles.dart';
 
-class RobotButton extends StatefulWidget {
+class RobotButton extends StatelessWidget {
   const RobotButton({ super.key });
 
-  @override
-  State<RobotButton> createState() => _RobotButtonState();
-}
-
-class _RobotButtonState extends State<RobotButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
