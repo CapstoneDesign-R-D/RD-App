@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../components/textStyles.dart';
-import '../widget/mainButton.dart';
+import '../widget/robotButton.dart';
+import '../widget/drinkButton.dart';
+import '../widget/managerButton.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ super.key });
@@ -13,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,  // 키보드 오버플로우 방지
       body: SafeArea(
         child: ChooseMenu()
       ),
@@ -26,16 +28,18 @@ class ChooseMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0), // 좌우 패딩 적용
+      padding: const EdgeInsets.fromLTRB(21, 0, 21, 0), // 좌우 패딩 적용
       child: Column(
         children: [
           Image.asset(  // 동국대 로고
             alignment: Alignment.topCenter, 
             'assets/images/dongguk_logo.png', 
             height: 80
+          ),
+          SizedBox( // 여백
+            height: 5,
           ),
           Row(
             children: [
@@ -45,15 +49,15 @@ class ChooseMenu extends StatelessWidget {
                 fit: BoxFit.contain, 
                 height: 90
               ),
-              const SizedBox(width: 5),
-              Column(
+              const SizedBox(width: 5), // 여백
+              Column( // 앱 기본 멘트
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     '안녕하세요, 동국대학교 도서관 서비스 로봇\n“라이브러리봇”입니다 :)',
                     style: headerTextStyle,
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   Text(
                     '아래에서 원하는 서비스를 선택해보세요!',
                     style: defaultTextStyle,
@@ -62,12 +66,16 @@ class ChooseMenu extends StatelessWidget {
               ),
             ],
           ),
-          // 버튼 3개
-          Column(
+          SizedBox( // 여백
+            height: 35,
+          ),
+          Column( // 버튼 3개
             children: [
-              const MainButton(),
-              const MainButton(),
-              const MainButton()
+              const RobotButton(),
+              const SizedBox(height: 25), // 여백
+              const DrinkButton(),
+              const SizedBox(height: 25), // 여백
+              const ManagerButton()
             ],
           ),
         ],

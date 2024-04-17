@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/screen/chooseFloorScreen.dart';
 import 'package:flutter_app/screen/mainScreen.dart';
 
 void main() {
@@ -11,16 +11,11 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LibraryBot',
-      theme: const CupertinoThemeData(
+      theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,  // 기본 배경색 지정
-        textTheme: CupertinoTextThemeData(
-          textStyle: TextStyle( // 기본 폰트
-            fontFamily: 'Inter',
-          ),
-        ),
       ),
       home: const MainScreen(),
     );
