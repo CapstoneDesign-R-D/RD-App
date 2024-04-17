@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/textStyles.dart';
+import 'package:flutter_app/screen/robotMapScreen.dart';
 
 class FloorButton extends StatelessWidget {
   final String buttonText;  // 버튼 내 텍스트 
@@ -25,7 +26,12 @@ class FloorButton extends StatelessWidget {
         ],
       ),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const RobotMapScreen())
+          );
+        },
         child: Stack(
           children: [
             Text(
