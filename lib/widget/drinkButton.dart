@@ -19,6 +19,14 @@ class _DrinkButtonState extends State<DrinkButton> {
       decoration: BoxDecoration(
         color: Color(0xFFC0E6F2),
         borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.6),
+            blurRadius: 5.0,
+            spreadRadius: 1.0,
+            offset: const Offset(0,5),
+          )
+        ],
       ),
       child: MaterialButton(
         onPressed: () {}, // 버튼 클릭 시 해당 페이지로 이동
@@ -56,7 +64,7 @@ class _DrinkButtonState extends State<DrinkButton> {
               child: const Align(
                 alignment: Alignment.bottomCenter,
                 child: Text(
-                  ': 반입 금지 물품에 대한 알림/해제 기록을 확인해요.',
+                  '반입 금지 물품에 대한 알림/해제 기록을 확인해요.',
                   style: greyTextStyle,
                 ),
               ),

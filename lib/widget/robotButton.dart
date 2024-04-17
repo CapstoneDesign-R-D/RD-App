@@ -15,6 +15,14 @@ class RobotButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: Color(0xFFD0F5BE),
         borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.6),
+            blurRadius: 5.0,
+            spreadRadius: 1.0,
+            offset: const Offset(0,5),
+          )
+        ],
       ),
       child: MaterialButton(
         onPressed: () { // 버튼 클릭 시 층 선택 페이지로 이동
@@ -65,7 +73,7 @@ class RobotButton extends StatelessWidget {
               child: const Align(
                 alignment: Alignment.bottomCenter,
                 child: Text(
-                  ': 현재 로봇과 반입 금지 물품의 위치를 확인해요.',
+                  '현재 로봇과 반입 금지 물품의 위치를 확인해요.',
                   style: greyTextStyle,
                 ),
               ),
