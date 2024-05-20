@@ -8,7 +8,7 @@ class FlutterLocalNotification {
   static init() async {
     // 커스텀 아이콘 설정
     AndroidInitializationSettings androidInitializationSettings = 
-      const AndroidInitializationSettings('assets/images/robot_main_logo.png');
+      const AndroidInitializationSettings('./assets/images/robot_main_logo.png');
     // 권한 요청 : 필요 시 true로 변경할 것
     DarwinInitializationSettings iosInitializationsSettings = const DarwinInitializationSettings(
       requestAlertPermission: false,
