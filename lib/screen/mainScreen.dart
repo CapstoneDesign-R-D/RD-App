@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/notification.dart';
 import '../components/textStyles.dart';
 import '../widget/robotButton.dart';
 import '../widget/drinkButton.dart';
@@ -12,6 +13,18 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  void initState() {
+    // 초기화
+    FlutterLocalNotification.init();
+
+    // 3초 후 권한 요청
+    Future.delayed(
+      const Duration(seconds: 3), 
+      FlutterLocalNotification.requestNotificationPermission()
+    );
+    super.initState();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +46,14 @@ class ChooseMenu extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(21, 0, 21, 0), // 좌우 패딩 적용
       child: Column(
         children: [
-          Image.asset(  // 동국대 로고
-            alignment: Alignment.topCenter, 
-            'assets/images/dongguk_logo.png', 
-            height: 80
+          // 임시로 로고 클릭 시 푸시 알림이 오게 설정.
+          TextButton(
+            onPressed: () => FlutterLocalNotification.showNotification(),
+            child: Image.asset(  // 동국대 로고
+              alignment: Alignment.topCenter, 
+              'assets/images/dongguk_logo.png', 
+              height: 80
+            ),
           ),
           SizedBox( // 여백
             height: 5,
