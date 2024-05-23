@@ -28,8 +28,8 @@ class _KakaoLoginState extends State<KakaoLogin> {
       bool isInstalled = await isKakaoTalkInstalled();
 
       OAuthToken token = isInstalled
-        ? await UserApi.instance.loginWithKakaoTalk()
-        : await UserApi.instance.loginWithKakaoAccount();
+          ? await UserApi.instance.loginWithKakaoTalk()
+          : await UserApi.instance.loginWithKakaoAccount();
 
       final url = Uri.https('kapi.kakao.com', '/v2/user/me');
 
@@ -44,6 +44,7 @@ class _KakaoLoginState extends State<KakaoLogin> {
       print(profileInfo.toString());
 
       setState(() {
+        // 로그인의 경우
         _loginPlatform = LoginPlatform.kakao;
         // 메인 화면으로 이동
         Navigator.of(context).push(MaterialPageRoute(
@@ -84,13 +85,12 @@ class _KakaoLoginState extends State<KakaoLogin> {
 
   Widget _loginButton(VoidCallback onTap) {
     return CupertinoButton(
-      onPressed: onTap,
-      child: Container(
-        width: 240,
-        height: 36,
-        child: Image.asset('assets/images/kakao_login_large_wide.png'),
-      )
-    );
+        onPressed: onTap,
+        child: Container(
+          width: 260,
+          height: 40,
+          child: Image.asset('assets/images/kakao_login_large_wide.png'),
+        ));
   }
 
   // 로그아웃 사용 시 사용할 것
