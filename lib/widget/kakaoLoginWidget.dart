@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/mainScreen.dart';
 import 'package:http/http.dart' as http;
-import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart';
 
 enum LoginPlatform {
   kakao, // 로그인
