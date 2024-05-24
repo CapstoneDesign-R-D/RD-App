@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/LoginScreen.dart';
-import 'package:flutter_app/screen/chooseFloorScreen.dart';
-import 'package:flutter_app/screen/mainScreen.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 void main() async {
