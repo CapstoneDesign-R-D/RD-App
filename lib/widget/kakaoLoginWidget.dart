@@ -41,7 +41,15 @@ class _KakaoLoginState extends State<KakaoLogin> {
       );
 
       final profileInfo = json.decode(response.body);
+
+      // 사용자 정보 추출
+      String email = profileInfo['kakao_account']['email'];
+      String name = profileInfo['properties']['nickname'];
+
       print(profileInfo.toString());
+
+      // 사용자 정보를 백엔드 서버로 전송
+      await sendUserInfoToServer(email, name);
 
       setState(() {
         // 로그인의 경우
@@ -53,6 +61,31 @@ class _KakaoLoginState extends State<KakaoLogin> {
       });
     } catch (error) {
       print('카카오톡으로 로그인 실패 $error');
+    }
+  }
+
+  Future<void> sendUserInfoToServer(String email, String name) async {
+    // API 엔드포인트 URL
+    const String apiUrl = 'http://3.34.109.184:8080/api/member/login';
+
+    // HTTP 요청 헤더
+    final headers = {
+      'Content-Type': 'application/json',
+    };
+
+    // HTTP 요청 바디
+    final body = jsonEncode({
+      'userEmail': email,
+      'userPW': '1234', // 기본 비밀번호 설정
+    });
+
+    // HTTP POST 요청
+    final response = await http.post(Uri.parse(apiUrl), headers: headers, body: body);
+
+    if (response.statusCode == 200) { // 성공일 경우
+      print('User info successfully sent to server');
+    } else {
+      print('Failed to send user info to server: ${response.body}');
     }
   }
 
