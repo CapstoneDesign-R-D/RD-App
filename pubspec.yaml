@@ -30,12 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
+  kakao_flutter_sdk: ^1.3.1
+  http:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_local_notifications:
+  flutter_local_notifications: ^17.1.2
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +67,7 @@ flutter:
     - assets/images/icon3.png
     - assets/images/robot_logo_login.png
     - assets/images/robot_main_logo.png
+    - assets/images/kakao_login_large_wide.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
