@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/LoginScreen.dart';
+import 'package:flutter_app/screen/mainScreen.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 void main() async {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white, // 기본 배경색 지정
       ),
-      home: const LoginScreen(),
+      home: const MainScreen(),
     );
   }
 }
