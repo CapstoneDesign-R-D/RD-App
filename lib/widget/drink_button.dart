@@ -1,6 +1,6 @@
 /* 메인 화면 내 버튼 3가지 중 음료 버튼*/
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screen/record_of_removal_screen.dart';
 import '../components/textStyles.dart';
 
 class DrinkButton extends StatefulWidget {
@@ -29,7 +29,14 @@ class _DrinkButtonState extends State<DrinkButton> {
         ],
       ),
       child: MaterialButton(
-        onPressed: () {}, // 버튼 클릭 시 해당 페이지로 이동
+        onPressed: () {
+          Navigator.push(
+            context, 
+            MaterialPageRoute(
+              builder: (context) => const RecordOfRemovalScreen()
+            )
+          );
+        },
         child: Stack(
           children: [
             Container(  // 버튼 이름

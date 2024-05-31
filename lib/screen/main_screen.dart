@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/notification.dart';
 import '../components/textStyles.dart';
-import '../widget/robotButton.dart';
-import '../widget/drinkButton.dart';
-import '../widget/managerButton.dart';
+import '../widget/robot_button.dart';
+import '../widget/drink_button.dart';
+import '../widget/manager_button.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({ super.key });

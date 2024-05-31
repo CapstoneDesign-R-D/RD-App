@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/components/decorations.dart';
 import 'package:flutter_app/components/textStyles.dart';
-import 'package:flutter_app/widget/kakaoLoginWidget.dart';
+import 'package:flutter_app/widget/kakao_login_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({ super.key });

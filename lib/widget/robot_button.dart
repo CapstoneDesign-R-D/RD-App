@@ -1,7 +1,6 @@
 /* 메인 화면 내 버튼 3가지 중 로봇 버튼*/
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screen/chooseFloorScreen.dart';
+import 'package:flutter_app/screen/choose_floor_screen.dart';
 import '../components/textStyles.dart';
 
 class RobotButton extends StatelessWidget {
@@ -25,7 +24,7 @@ class RobotButton extends StatelessWidget {
         ],
       ),
       child: MaterialButton(
-        onPressed: () { // 버튼 클릭 시 층 선택 페이지로 이동
+        onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const ChooseFloorScreen())

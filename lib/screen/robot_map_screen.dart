@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/widget/bar.dart';
 
 class RobotMapScreen extends StatefulWidget {
-  const RobotMapScreen({super.key});
+  const RobotMapScreen({ super.key });
 
   @override
   State<RobotMapScreen> createState() => _RobotMapScreenState();
