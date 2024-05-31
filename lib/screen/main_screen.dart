@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/notification.dart';
-import '../components/textStyles.dart';
+import 'package:flutter_app/components/text_style.dart';
 import '../widget/robot_button.dart';
 import '../widget/drink_button.dart';
 import '../widget/manager_button.dart';

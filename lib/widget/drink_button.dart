@@ -1,7 +1,7 @@
 /* 메인 화면 내 버튼 3가지 중 음료 버튼*/
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/record_of_removal_screen.dart';
-import '../components/textStyles.dart';
+import 'package:flutter_app/components/text_style.dart';
 
 class DrinkButton extends StatefulWidget {
   const DrinkButton({ super.key });

@@ -1,7 +1,7 @@
 /* 메인 화면 내 버튼 3가지 중 로봇 버튼*/
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screen/choose_floor_screen.dart';
-import '../components/textStyles.dart';
+import 'package:flutter_app/components/text_style.dart';
 
 class RobotButton extends StatelessWidget {
   const RobotButton({ super.key });
@@ -34,7 +34,7 @@ class RobotButton extends StatelessWidget {
           children: [
             Container(  // 버튼 이름
               padding: const EdgeInsets.fromLTRB(60, 20, 60, 0),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Align(
