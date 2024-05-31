@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white, // 기본 배경색 지정
       ),
-      home: const MainScreen(),
+      home: const LoginScreen(),
     );
   }
 }
