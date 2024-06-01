@@ -1,7 +1,6 @@
 /* 메인 화면 내 버튼 3가지 중 관리자 페이지 버튼*/
-import 'dart:io';
 import 'package:flutter/material.dart';
-import '../components/textStyles.dart';
+import 'package:flutter_app/components/text_style.dart';
 
 class ManagerButton extends StatefulWidget {
   const ManagerButton({ super.key });

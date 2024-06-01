@@ -26,3 +26,10 @@ const TextStyle buttonTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
   fontSize: 18,
 );
+
+const TextStyle tinyTextStyle = TextStyle(
+  fontFamily: 'Inter',
+  color: Colors.black,
+  fontWeight: FontWeight.w300,
+  fontSize: 11,
+);

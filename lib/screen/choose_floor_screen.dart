@@ -1,8 +1,8 @@
 /*층 선택 화면*/
 import 'package:flutter/material.dart';
-import 'package:flutter_app/components/textStyles.dart';
+import 'package:flutter_app/components/text_style.dart';
 import 'package:flutter_app/widget/bar.dart';
-import 'package:flutter_app/widget/floorButton.dart';
+import 'package:flutter_app/widget/floor_button.dart';
 
 class ChooseFloorScreen extends StatefulWidget {
   const ChooseFloorScreen({ super.key });

@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/components/decorations.dart';
-import 'package:flutter_app/widget/kakaoLoginWidget.dart';
+import 'package:flutter_app/components/text_style.dart';
+import 'package:flutter_app/widget/kakao_login_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({ super.key });
@@ -23,63 +24,86 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                MaterialButton(
-                  child: const Icon(
-                    Icons.arrow_back_ios,
-                    size: 27,
-                    color: Colors.orange,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                const SizedBox(width: 83),
-                const Text(
-                  "로그인",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(width: 31),
-              ],
-            ),
-            const SizedBox(height: 44),
+            // 동국대 로고
             Image.asset(
-              // 로봇 로고
+              alignment: Alignment.topCenter,
+              'assets/images/dongguk_logo.png',
+              height: 80
+            ),
+            const SizedBox(height: 25),
+            // 로봇 로고
+            Image.asset(
               alignment: Alignment.centerLeft,
               'assets/images/robot_main_logo.png',
               fit: BoxFit.contain,
-              height: 90
+              height: 120
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 25),
+            // 로그인 안내 문구
+            Text.rich(
+              textAlign: TextAlign.center,
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: '동국대학교 도서관 서비스 로봇 ', 
+                    style: headerTextStyle.copyWith(
+                      fontSize: 15,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '"라이브러리봇"',
+                    style: headerTextStyle.copyWith(
+                      color: Colors.orange,
+                      fontSize: 15,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '입니다.', 
+                    style: headerTextStyle.copyWith(
+                      fontSize: 15,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '\n서비스를 이용하기 위해 로그인해주세요.',
+                    style: headerTextStyle.copyWith(
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Dongguk University library service robot “Library Bot” :)\nPlease log in to use the service.',
+              style: tinyTextStyle,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 43.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Row(
+                  // 아이디
+                  Row(
                     children: [
                       Padding(
                         padding: EdgeInsets.only(bottom: 6.0),
-                        child: Text( "이메일",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                          ),
+                        child: Text(
+                          "이메일",
+                          style: headerTextStyle.copyWith(
+                            fontSize: 16,
+                          )
                         ),
                       ),
                       Spacer(),
                     ],
                   ),
                   CupertinoTextField(
-                    padding: const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 9, horizontal: 16),
                     style: const TextStyle(color: CupertinoColors.black),
-                    placeholder: "example@naver.com",
+                    placeholder: "dongguk@naver.com",
                     placeholderStyle: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
@@ -94,16 +118,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 20),
                   // 비밀번호
-                  const Row(
+                  Row(
                     children: [
                       Padding(
                         padding: EdgeInsets.only(bottom: 6.0),
                         child: Text(
                           "비밀번호",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black,
-                          ),
+                          style: headerTextStyle.copyWith(
+                            fontSize: 16,
+                          )
                         ),
                       ),
                       Spacer(),
@@ -127,7 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: textFieldDecoration(),
                   ),
                   const SizedBox(height: 20),
-                  // 비밀번호 찾기 / 회원가입
+                  // 비밀번호 찾기 | 회원가입
                   const Padding(
                     padding: EdgeInsets.only(right: 12.0),
                     child: Text(
@@ -139,17 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  // 소셜 로그인
-                  const SizedBox(height: 15),
-                  const Text(
-                    "간편 로그인",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 10),
                   // 카카오 로그인 버튼
                   const KakaoLogin()
                 ],

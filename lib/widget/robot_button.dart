@@ -1,23 +1,18 @@
-/* 메인 화면 내 버튼 3가지 중 음료 버튼*/
-import 'dart:io';
+/* 메인 화면 내 버튼 3가지 중 로봇 버튼*/
 import 'package:flutter/material.dart';
-import '../components/textStyles.dart';
+import 'package:flutter_app/screen/choose_floor_screen.dart';
+import 'package:flutter_app/components/text_style.dart';
 
-class DrinkButton extends StatefulWidget {
-  const DrinkButton({ super.key });
+class RobotButton extends StatelessWidget {
+  const RobotButton({ super.key });
 
-  @override
-  State<DrinkButton> createState() => _DrinkButtonState();
-}
-
-class _DrinkButtonState extends State<DrinkButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 330,
       height: 150,
       decoration: BoxDecoration(
-        color: Color(0xFFC0E6F2),
+        color: Color(0xFFD0F5BE),
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -29,18 +24,31 @@ class _DrinkButtonState extends State<DrinkButton> {
         ],
       ),
       child: MaterialButton(
-        onPressed: () {}, // 버튼 클릭 시 해당 페이지로 이동
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ChooseFloorScreen())
+          );
+        }, 
         child: Stack(
           children: [
             Container(  // 버튼 이름
-              padding: const EdgeInsets.fromLTRB(50, 10, 50, 0),
-              child: Column(
+              padding: const EdgeInsets.fromLTRB(60, 20, 60, 0),
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      '반입 금지 물품 제거 기록',
+                      '로봇 / 반입 금지 물품',
+                      style: buttonTextStyle,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      '실시간 위치 확인',
                       style: buttonTextStyle,
                       textAlign: TextAlign.center,
                     ),
@@ -48,23 +56,23 @@ class _DrinkButtonState extends State<DrinkButton> {
                 ],
               ),
             ),
-            Container(  // 음료 로고
+            Container(  // 로봇 로고
               width: 45,
               height: 45,
               margin: const EdgeInsets.fromLTRB(130, 10, 130, 0),
               child: Image.asset(  
                 alignment: Alignment.center, 
-                'assets/images/icon2.png', 
+                'assets/images/icon1.png', 
                 fit: BoxFit.contain, 
               ),
             ),
             Container(  // 버튼 설명 멘트
               width: 500,
-              padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 13),
               child: const Align(
                 alignment: Alignment.bottomCenter,
                 child: Text(
-                  '반입 금지 물품에 대한 알림/해제 기록을 확인해요.',
+                  '현재 로봇과 반입 금지 물품의 위치를 확인해요.',
                   style: greyTextStyle,
                 ),
               ),

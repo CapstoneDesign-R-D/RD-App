@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/components/textStyles.dart';
-import 'package:flutter_app/screen/robotMapScreen.dart';
+import 'package:flutter_app/components/text_style.dart';
+import 'package:flutter_app/screen/robot_map_screen.dart';
 
 class FloorButton extends StatelessWidget {
   final String buttonText;  // 버튼 내 텍스트 

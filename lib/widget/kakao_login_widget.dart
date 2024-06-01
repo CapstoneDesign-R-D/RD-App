@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screen/mainScreen.dart';
+import 'package:flutter_app/screen/main_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk_user.dart';
 
@@ -118,12 +118,13 @@ class _KakaoLoginState extends State<KakaoLogin> {
 
   Widget _loginButton(VoidCallback onTap) {
     return CupertinoButton(
-        onPressed: onTap,
-        child: Container(
-          width: 260,
-          height: 40,
-          child: Image.asset('assets/images/kakao_login_large_wide.png'),
-        ));
+      onPressed: onTap,
+      child: Container(
+        width: 270,
+        height: 60,
+        child: Image.asset('assets/images/kakao_login_large_wide.png'),
+      )
+    );
   }
 
   // 로그아웃 사용 시 사용할 것

@@ -68,6 +68,8 @@ flutter:
     - assets/images/robot_logo_login.png
     - assets/images/robot_main_logo.png
     - assets/images/kakao_login_large_wide.png
+    - assets/images/map_of_library.png
+    - assets/images/comment_of_3fMap.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
