@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - flutter_local_notifications (0.0.1):
     - Flutter
-  - kakao_flutter_sdk_common (1.9.2):
+  - kakao_flutter_sdk_common (1.4.2):
     - Flutter
   - shared_preferences_foundation (0.0.1):
     - Flutter
@@ -32,9 +32,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
-  kakao_flutter_sdk_common: 049c9341e325da17ac75751a35646dbbcfa06891
+  kakao_flutter_sdk_common: fc550ec16c85451e874d5304d2e1c540a221f5cb
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
-  webview_flutter_wkwebview: 4f3e50f7273d31e5500066ed267e3ae4309c5ae4
+  webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
 
 PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
 
