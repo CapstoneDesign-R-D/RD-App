@@ -18,6 +18,19 @@ class DetectedTime {
 
   factory DetectedTime.fromJson(Map<String, dynamic> json) => _$DetectedTimeFromJson(json);
   Map<String, dynamic> toJson() => _$DetectedTimeToJson(this);
+
+  factory DetectedTime.fromString(String time) {
+    final parts = time.split(':');
+    final hour = int.tryParse(parts[0]);
+    final minute = int.tryParse(parts[1]);
+    final second = int.tryParse(parts[2]);
+
+    return DetectedTime(
+      hour: hour,
+      minute: minute,
+      second: second,
+    );
+  }
 }
 
 @JsonSerializable()
@@ -36,6 +49,22 @@ class ObjectCheck {
     this.detectedTime,
   });
 
-  factory ObjectCheck.fromJson(Map<String, dynamic> json) => _$ObjectCheckFromJson(json);
+  // factory ObjectCheck.fromJson(Map<String, dynamic> json) => _$ObjectCheckFromJson(json);
+  // Map<String, dynamic> toJson() => _$ObjectCheckToJson(this);
+
+  factory ObjectCheck.fromJson(Map<String, dynamic> json) {
+    if (json['detectedTime'] is String) {
+      return ObjectCheck(
+        location: json['location'] as String?,
+        detectedClass: json['detectedClass'] as String?,
+        detectedDate: json['detectedDate'] as String?,
+        detectionCheck: json['detectionCheck'] as bool?,
+        detectedTime: DetectedTime.fromString(json['detectedTime'] as String),
+      );
+    }
+
+    return _$ObjectCheckFromJson(json);
+  }
+
   Map<String, dynamic> toJson() => _$ObjectCheckToJson(this);
 }

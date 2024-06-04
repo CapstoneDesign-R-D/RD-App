@@ -10,20 +10,37 @@ class ApiService {
       Response response = await _dio.get(
         'http://3.34.109.184:8080/api/object/check',
         options: Options(
-          responseType: ResponseType.plain,  // json으로 응답 받기
+          method: 'GET',
+          responseType: ResponseType.plain,  // 응답을 문자열로 받기
         )
       );
 
       if (response.statusCode == 200) { // success
-        print('Response data: ${response.data}');
-        List<ObjectCheck> objectCheckList = List<ObjectCheck>.from(jsonDecode(response.data).map((x) => ObjectCheck.fromJson(x)));
-        return objectCheckList;
+        print('Response data: ${response.data}\n');
+
+        // JSON 문자열을 디코딩하여 리스트로 변환
+        var decodedData = jsonDecode(response.data);
+        print('Decoded data: $decodedData\n');
+
+        if (decodedData is List) {
+          List<ObjectCheck> objectCheckList = decodedData.map<ObjectCheck>((item) {
+            if (item is Map<String, dynamic>) {
+              return ObjectCheck.fromJson(item);
+            } else {
+              print('Unexpected item type: ${item.runtimeType}');
+              throw Exception('Expected a Map<String, dynamic> but got ${item.runtimeType}');
+            }
+          }).toList();
+          return objectCheckList;
+        } else {
+          throw Exception('Expected a list but got something else');
+        }
       } else {
-        throw Exception('객체 인식 정보 리스트1을 불러오는 데 실패하였습니다.');
+        throw Exception('객체 인식 정보 리스트를 불러오는 데 실패하였습니다.');
       }
     } catch (e) {
       print('Error: $e');
-      throw Exception('객체 인식 정보 리스트2를 불러오는 데 실패하였습니다.');
+      throw Exception('객체 인식 정보 리스트를 불러오는 데 실패하였습니다.');
     }
   }
 }
