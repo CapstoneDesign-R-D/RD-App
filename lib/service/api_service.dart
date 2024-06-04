@@ -16,12 +16,9 @@ class ApiService {
       );
 
       if (response.statusCode == 200) { // success
-        print('Response data: ${response.data}\n');
-
         // JSON 문자열을 디코딩하여 리스트로 변환
         var decodedData = jsonDecode(response.data);
-        print('Decoded data: $decodedData\n');
-
+        
         if (decodedData is List) {
           List<ObjectCheck> objectCheckList = decodedData.map<ObjectCheck>((item) {
             if (item is Map<String, dynamic>) {

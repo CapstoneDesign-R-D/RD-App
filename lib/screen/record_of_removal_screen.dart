@@ -110,8 +110,25 @@ class _RecordOfRemovalScreenState extends State<RecordOfRemovalScreen> {
                           fontSize: 19,
                         ),
                       ),
-                      subtitle: Text(
-                        '${_objectCheckList[index].detectedDate ?? 'Unknown Date'} ${_objectCheckList[index].detectedTime?.hour ?? 'Unknown Hour'}:${_objectCheckList[index].detectedTime?.minute ?? 'Unknown minute'}\n제거 여부 : ${_objectCheckList[index].detectionCheck}'),
+                      subtitle: Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${_objectCheckList[index].detectedDate ?? 'Unknown Date'} ${_objectCheckList[index].detectedTime?.hour ?? 'Unknown Hour'}:${_objectCheckList[index].detectedTime?.minute ?? 'Unknown minute'}\n', 
+                              style: defaultTextStyle.copyWith(
+                                fontSize: 14,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '제거 여부 : ${_objectCheckList[index].detectionCheck}',
+                              style: headerTextStyle.copyWith(
+                                fontSize: 14,
+                                color: Colors.red
+                              )
+                            ),
+                          ]
+                        )
+                      ),
                       trailing: Icon(Icons.arrow_forward_ios),
                       onTap: () {
                         _showConfirmationDialog(index);
