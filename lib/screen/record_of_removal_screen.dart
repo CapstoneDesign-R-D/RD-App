@@ -41,12 +41,31 @@ class _RecordOfRemovalScreenState extends State<RecordOfRemovalScreen> {
           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0), // 좌우 패딩 적용
           child: Column(
             children: [
-              Bar(), // 상단 제어 바
+              // 상단 제어 바
+              Bar(), 
+              // 반입 금지 물품 리스트
               Expanded(
                 child: ListView.builder(
                   itemCount: _objectCheckList.length,
                   itemBuilder: (context, index) {
-                    return _buildObjectCheckItem(_objectCheckList[index]);
+                    return ListTile(
+                      leading: Image.asset(
+                        'assets/images/robot_main_logo.png',
+                        fit: BoxFit.contain,
+                        height: 120
+                      ),
+                      title: Text(
+                        _objectCheckList[index].detectedClass ?? 'Unknown Class',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 19,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '${_objectCheckList[index].detectedDate ?? 'Unknown Date'} ${_objectCheckList[index].detectedTime?.hour ?? 'Unknown Hour'}:${_objectCheckList[index].detectedTime?.minute ?? 'Unknown minute'}'),
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      onTap: () {}  // 함수 추가
+                    );
                   },
                 )
               )

@@ -33,7 +33,7 @@ class ApiService {
           }).toList();
           return objectCheckList;
         } else {
-          throw Exception('Expected a list but got something else');
+          throw Exception('Not a list.');
         }
       } else {
         throw Exception('객체 인식 정보 리스트를 불러오는 데 실패하였습니다.');

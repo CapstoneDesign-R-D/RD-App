@@ -7,10 +7,10 @@ part of 'object_check.dart';
 // **************************************************************************
 
 DetectedTime _$DetectedTimeFromJson(Map<String, dynamic> json) => DetectedTime(
-      hour: (json['hour'] as num?)?.toInt(),
-      minute: (json['minute'] as num?)?.toInt(),
-      second: (json['second'] as num?)?.toInt(),
-      nano: (json['nano'] as num?)?.toInt(),
+      hour: json['hour'] as String?,
+      minute: json['minute'] as String?,
+      second: json['second'] as String?,
+      nano: json['nano'] as String,
     );
 
 Map<String, dynamic> _$DetectedTimeToJson(DetectedTime instance) =>

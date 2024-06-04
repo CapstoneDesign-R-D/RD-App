@@ -4,10 +4,10 @@ part 'object_check.g.dart';
 
 @JsonSerializable()
 class DetectedTime {
-  int? hour;
-  int? minute;
-  int? second;
-  int? nano;
+  String? hour;
+  String? minute;
+  String? second;
+  String? nano;
 
   DetectedTime({
     this.hour,
@@ -21,9 +21,9 @@ class DetectedTime {
 
   factory DetectedTime.fromString(String time) {
     final parts = time.split(':');
-    final hour = int.tryParse(parts[0]);
-    final minute = int.tryParse(parts[1]);
-    final second = int.tryParse(parts[2]);
+    final hour = parts[0];
+    final minute = parts[1];
+    final second = parts[2];
 
     return DetectedTime(
       hour: hour,
