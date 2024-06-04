@@ -114,15 +114,33 @@ class _RecordOfRemovalScreenState extends State<RecordOfRemovalScreen> {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: '${_objectCheckList[index].detectedDate ?? 'Unknown Date'} ${_objectCheckList[index].detectedTime?.hour ?? 'Unknown Hour'}:${_objectCheckList[index].detectedTime?.minute ?? 'Unknown minute'}\n', 
+                              text: '${_objectCheckList[index].detectedDate ?? 'Unknown Date'} ${_objectCheckList[index].detectedTime?.hour ?? 'Unknown Hour'}:${_objectCheckList[index].detectedTime?.minute ?? 'Unknown minute'}:${_objectCheckList[index].detectedTime?.second ?? 'Unknown second'}\n', 
                               style: defaultTextStyle.copyWith(
                                 fontSize: 14,
                               ),
                             ),
                             TextSpan(
-                              text: '제거 여부 : ${_objectCheckList[index].detectionCheck}',
+                              text: '📍',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '위치 : ${_objectCheckList[index].location}\t\t',
                               style: headerTextStyle.copyWith(
-                                fontSize: 14,
+                                fontSize: 15,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '🥤',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '제거 : ${_objectCheckList[index].detectionCheck == false? 'X' : 'O'}',
+                              style: headerTextStyle.copyWith(
+                                fontSize: 15,
                                 color: Colors.red
                               )
                             ),

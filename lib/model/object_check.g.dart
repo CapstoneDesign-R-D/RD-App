@@ -25,10 +25,11 @@ ObjectCheck _$ObjectCheckFromJson(Map<String, dynamic> json) => ObjectCheck(
       location: json['location'] as String?,
       detectedClass: json['detectedClass'] as String?,
       detectedDate: json['detectedDate'] as String?,
+      objId: json['objId'] as int?,
       detectionCheck: json['detectionCheck'] as bool?,
       detectedTime: json['detectedTime'] == null
-          ? null
-          : DetectedTime.fromJson(json['detectedTime'] as Map<String, dynamic>),
+        ? null
+        : DetectedTime.fromJson(json['detectedTime'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ObjectCheckToJson(ObjectCheck instance) =>
@@ -36,6 +37,7 @@ Map<String, dynamic> _$ObjectCheckToJson(ObjectCheck instance) =>
       'location': instance.location,
       'detectedClass': instance.detectedClass,
       'detectedDate': instance.detectedDate,
+      'objId': instance.objId,
       'detectionCheck': instance.detectionCheck,
       'detectedTime': instance.detectedTime,
     };

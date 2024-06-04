@@ -38,6 +38,7 @@ class ObjectCheck {
   String? location;
   String? detectedClass;
   String? detectedDate;
+  int? objId;
   bool? detectionCheck;
   DetectedTime? detectedTime;
 
@@ -45,6 +46,7 @@ class ObjectCheck {
     this.location,
     this.detectedClass,
     this.detectedDate,
+    this.objId,
     this.detectionCheck,
     this.detectedTime,
   });
@@ -55,6 +57,7 @@ class ObjectCheck {
         location: json['location'] as String?,
         detectedClass: json['detectedClass'] as String?,
         detectedDate: json['detectedDate'] as String?,
+        objId: json['objId'] as int?,
         detectionCheck: json['detectionCheck'] as bool?,
         detectedTime: DetectedTime.fromString(json['detectedTime'] as String),
       );
