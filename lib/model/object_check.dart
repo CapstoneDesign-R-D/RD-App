@@ -49,9 +49,6 @@ class ObjectCheck {
     this.detectedTime,
   });
 
-  // factory ObjectCheck.fromJson(Map<String, dynamic> json) => _$ObjectCheckFromJson(json);
-  // Map<String, dynamic> toJson() => _$ObjectCheckToJson(this);
-
   factory ObjectCheck.fromJson(Map<String, dynamic> json) {
     if (json['detectedTime'] is String) {
       return ObjectCheck(

@@ -146,7 +146,7 @@ class _RecordOfRemovalScreenState extends State<RecordOfRemovalScreen> {
 
   Widget _buildObjectCheckItem(ObjectCheck objectCheck) {
     return ListTile(
-      title: Text(objectCheck.location ?? '인식하지 못 한 위치'),
+      title: Text(objectCheck.location ?? 'Unknown Location'),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
