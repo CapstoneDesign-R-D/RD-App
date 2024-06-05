@@ -4,10 +4,10 @@ part 'object_check.g.dart';
 
 @JsonSerializable()
 class DetectedTime {
-  String? hour;
-  String? minute;
-  String? second;
-  String? nano;
+  int? hour;
+  int? minute;
+  int? second;
+  int? nano;
 
   DetectedTime({
     this.hour,
@@ -21,14 +21,16 @@ class DetectedTime {
 
   factory DetectedTime.fromString(String time) {
     final parts = time.split(':');
-    final hour = parts[0];
-    final minute = parts[1];
-    final second = parts[2];
+    final hour = int.parse(parts[0]);
+    final minute = int.parse(parts[1]);
+    final second = int.parse(parts[2]);
+    const nano = 0;
 
     return DetectedTime(
       hour: hour,
       minute: minute,
       second: second,
+      nano: nano
     );
   }
 }
@@ -59,7 +61,7 @@ class ObjectCheck {
         detectedDate: json['detectedDate'] as String?,
         objId: json['objId'] as int?,
         detectionCheck: json['detectionCheck'] as bool?,
-        detectedTime: DetectedTime.fromString(json['detectedTime'] as String),
+        detectedTime: DetectedTime.fromString(json['detectedTime']),
       );
     }
 
@@ -67,4 +69,5 @@ class ObjectCheck {
   }
 
   Map<String, dynamic> toJson() => _$ObjectCheckToJson(this);
+
 }
