@@ -1,5 +1,4 @@
 /*카카오 로그인 페이지*/
-// 수정 필요
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/components/decorations.dart';
